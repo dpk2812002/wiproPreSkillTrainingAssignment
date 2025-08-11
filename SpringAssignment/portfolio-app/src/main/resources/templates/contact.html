@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deepak Kumar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #f4f7f9;
+        }
+        header {
+            background-color: #1a73e8;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffc107;
+        }
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #1a73e8;
+        }
+        p {
+            color: #555;
+            margin: 10px 0;
+        }
+        a.link {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a.link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 th:text="${pageTitle}">Contact Me</h1>
+    <nav>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/about}">About</a>
+        <a th:href="@{/skills}">Skills</a>
+        <a th:href="@{/education}">Education</a>
+        <a th:href="@{/contact}">Contact</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Reach Out</h2>
+    <p><strong>Email:</strong> <a class="link" th:href="'mailto:' + ${email}" th:text="${email}">Email</a></p>
+    <p><strong>Phone:</strong> <a class="link" th:href="'tel:' + ${phone}" th:text="${phone}">Phone</a></p>
+    <p><strong>Location:</strong> <span th:text="${location}">Location</span></p>
+    
+        
+</section>
+
+</body>
+</html>

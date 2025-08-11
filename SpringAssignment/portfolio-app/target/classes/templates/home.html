@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Of Deepak</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f7f9;
+        }
+
+        header {
+            background-color: #1a73e8;
+            padding: 20px 0;
+            color: white;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #1a73e8;
+            margin-bottom: 20px;
+        }
+
+        p, li {
+            color: #555;
+        }
+
+        .edu-block, .skill, .contact-block {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 th:text="${name}">Deepak Kumar</h1>
+    <nav>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/about}">About</a>
+        <a th:href="@{/skills}">Skills</a>
+        <a th:href="@{/education}">Education</a>
+        <a th:href="@{/contact}">Contact</a>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p th:text="${about}">
+        I am Deepak Kumar, a passionate Java full stack developer skilled in Core Java, Spring Boot, JSP, Servlets, HTML, CSS, JavaScript, MySQL, and REST APIs.
+    </p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li th:each="skill : ${skills}" th:text="${skill}">Java, Spring Boot, etc.</li>
+    </ul>
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+    <div th:each="edu : ${educationList}" class="edu-block">
+        <h3 th:text="${edu.degree}">Degree</h3>
+        <p><strong th:text="${edu.institute}">Institute Name</strong></p>
+        <p th:text="${edu.years} + ' | CGPA: ' + ${edu.cgpa}">Year | CGPA</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-block">
+        <p><strong>Email:</strong> <span th:text="${email}">your.email@example.com</span></p>
+        <p><strong>Phone:</strong> <span th:text="${phone}">+91-0000000000</span></p>
+        <p><strong>Location:</strong> <span th:text="${location}">City, State</span></p>
+    </div>
+</section>
+
+</body>
+</html>

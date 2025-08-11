@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Deepak Kumar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #f4f7f9;
+        }
+        header {
+            background-color: #1a73e8;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #1a73e8;
+        }
+        ul {
+            color: #555;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Skills</h1>
+    <nav>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/about}">About</a>
+        <a th:href="@{/skills}">Skills</a>
+        <a th:href="@{/education}">Education</a>
+        <a th:href="@{/contact}">Contact</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Technical Proficiency</h2>
+    <ul>
+        <li th:each="skill : ${skills}" th:text="${skill}"></li>
+    </ul>
+</section>
+
+</body>
+</html>
