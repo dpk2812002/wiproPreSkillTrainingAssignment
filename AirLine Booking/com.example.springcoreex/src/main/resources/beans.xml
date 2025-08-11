@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+    <bean id="Customer" class="com.model.Customer">
+    
+        
+        <property name="sno" value="100"></property>
+        <property name="name" value="Deepak"></property>
+        <property name="email" value="avc123@gmail.com"></property>
+    </bean>
+    
+    <bean id = "Address" class="com.model.Address">
+    <property name="doorno" value="10"></property>
+        <property name="streetAddr" value="ganfhi chowk"></property>
+        <property name="cityName" value="patna"></property>
+        <property name="pincode" value="800001"></property>
+    </bean>
+ 
+ 
+ 
+</beans>
+ 

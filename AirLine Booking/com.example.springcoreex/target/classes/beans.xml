@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+    <bean id="Customer" class="com.model.Customer">
+    <!-- Define a bean named "customer" of class "com.model.Customer" -->
+        <!-- Set the property "sno" with the value "1234567890" -->
+        <!-- Set the property "name" with the value "Pavan" -->
+        
+        <property name="sno" value="100"></property>
+        <property name="name" value="Pavan"></property>
+        <property name="email" value="gmail.com"></property>
+    </bean>
+    
+    <bean id = "Address" class="com.model.Address">
+    <property name="doorno" value="10"></property>
+        <property name="streetAddr" value="hyd"></property>
+        <property name="cityName" value="chennai"></property>
+        <property name="pincode" value="123456"></property>
+    </bean>
+ 
+ 
+ 
+</beans>
+ 
